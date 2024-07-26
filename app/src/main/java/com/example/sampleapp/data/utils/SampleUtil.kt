@@ -10,4 +10,8 @@ class SampleUtil @Inject constructor(private val logger: Logger){
     private fun logMsg() {
         logger.logd("Sample Util Test message")
     }
+
+    private fun logMsg2() {
+        logger.logd("Sample Util Test message")
+    }
 }
