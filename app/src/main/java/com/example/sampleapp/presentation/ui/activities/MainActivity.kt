@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         initViews()
         initClicks()
         vm.getPost()
+        Log.d("PRO_DETAIL","Experimental")
     }
 
     private fun initViews() {
