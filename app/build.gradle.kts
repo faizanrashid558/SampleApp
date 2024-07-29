@@ -73,4 +73,7 @@ dependencies {
     implementation(libs.ktor.client.gson)
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.serialization.gson)
+
+    //Work Manager
+    implementation(libs.androidx.work.runtime.ktx)
 }
