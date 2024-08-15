@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.activities.BlurActivity">
+
+    <ImageView
+        android:id="@+id/imgBlur"
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="@dimen/_230sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/sample"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/sbBlur"
+        android:layout_width="0dp"
+        android:min="1"
+        android:max="25"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/btnSave"
+        app:layout_constraintEnd_toEndOf="@id/btnSave"
+        app:layout_constraintStart_toStartOf="@id/btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/imgBlur" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:text="Save Now"
+        android:textColor="@color/white"
+        android:padding="0dp"
+        app:layout_constraintEnd_toStartOf="@id/btnCollege"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sbBlur" />
+    <Button
+        android:id="@+id/btnCollege"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:text="College"
+        android:textColor="@color/white"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnSave"
+        app:layout_constraintTop_toBottomOf="@id/sbBlur" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSave">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/btnFilterGrey"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="grey"
+                android:padding="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btnFilterSepia"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="sepia"
+                android:padding="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/btnFilterNegative"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="negative"
+                android:padding="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btnFilterSepia2"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="sepia2"
+                android:padding="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/btnFilterBinary"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="binary"
+                android:padding="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btnFilterBrightness"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="brightness"
+                android:padding="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/btnFilterSaturation"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="saturation"
+                android:padding="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btnFilterContrast"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="contrast"
+                android:padding="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/btnFilterPosterize"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="posterize"
+                android:padding="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btnFilterRed"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="red"
+                android:padding="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/btnFilterGreen"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="green"
+                android:padding="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btnFilterBlue"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="blue"
+                android:padding="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/btnFilterEmboss"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="emboss"
+                android:padding="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btnFilterSharpen"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="sharpen"
+                android:padding="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/btnFilterGamma"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="gamma"
+                android:padding="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btnFilterVignette"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:text="vignette"
+                android:padding="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

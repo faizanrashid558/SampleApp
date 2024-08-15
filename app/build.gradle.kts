@@ -23,7 +23,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -34,8 +37,15 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        viewBinding  = true
+        viewBinding = true
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
 }
 
 dependencies {
@@ -54,7 +64,7 @@ dependencies {
     //Room DB
     implementation(libs.androidx.room.runtime)
     kapt(libs.androidx.room.compiler)
-    implementation (libs.androidx.room.ktx)
+    implementation(libs.androidx.room.ktx)
     //Koin DI
 //    implementation (libs.koin.core)
 //    implementation (libs.koin.android)
@@ -65,8 +75,8 @@ dependencies {
     kapt(libs.hilt.compiler.v248)
 
     //Retrofit
-    implementation (libs.retrofit)
-    implementation (libs.converter.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     //Ktor
     implementation(libs.ktor.client.android)
@@ -76,4 +86,15 @@ dependencies {
 
     //Work Manager
     implementation(libs.androidx.work.runtime.ktx)
+
+    //Picasso
+    implementation(libs.picasso)
+
+    //Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+
+
+    
+
 }

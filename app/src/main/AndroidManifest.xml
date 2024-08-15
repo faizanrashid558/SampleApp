@@ -17,7 +17,7 @@
         android:theme="@style/Theme.SampleApp"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.activities.WorkActivity"
+            android:name=".presentation.ui.activities.BlurActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,13 +26,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".presentation.ui.activities.WorkActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".presentation.ui.activities.MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
