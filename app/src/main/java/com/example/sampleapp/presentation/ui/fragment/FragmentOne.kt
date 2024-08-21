@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -20,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class FragmentOne : Fragment() {
+class FragmentOne : BaseFragment() {
 
 //    @Inject
 //    lateinit var userRepository: UserRepository
@@ -50,8 +51,25 @@ class FragmentOne : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
 
+            handleCameraPermission{
+                if(it){
+                    Toast.makeText(
+                        requireContext(),
+                        "Permission is Granted",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }else{
+                    Toast.makeText(
+                        requireContext(),
+                        "Permission is Denied",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+            }
         }
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

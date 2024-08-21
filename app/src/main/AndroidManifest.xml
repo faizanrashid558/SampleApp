@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:name=".di.Controller"
@@ -17,7 +22,7 @@
         android:theme="@style/Theme.SampleApp"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.activities.BlurActivity"
+            android:name=".presentation.ui.activities.NewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +31,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".presentation.ui.activities.BlurActivity"
+            android:exported="true"/>
+        <activity
             android:name=".presentation.ui.activities.WorkActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".presentation.ui.activities.MainActivity"
             android:exported="true">

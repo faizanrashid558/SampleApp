@@ -36,10 +36,10 @@ class MainViewModel @Inject constructor(private val productRepository: ProductRe
             }
     }
     init {
-        viewModelScope.launch {
-            delay(5000)
-            productRepository.getProducts()
-        }
+//        viewModelScope.launch {
+//            delay(5000)
+//            productRepository.getProducts()
+//        }
     }
 
 }
