@@ -22,56 +22,61 @@ import java.security.Permission
 import javax.inject.Inject
 
 open class BaseFragment : Fragment() {
-    @Inject
-    lateinit var appPref: AppPreferences
-    private var permissionCallback: ((Boolean) -> Unit)? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-    fun handleCameraPermission(callback: (Boolean) -> Unit) {
-        permissionCallback = callback
-        when {
-            ContextCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.CAMERA
-            ) == PackageManager.PERMISSION_GRANTED -> {
-                callback.invoke(true)
-            }
-
-            appPref.perCamera == 0 || appPref.perCamera == 1 -> {
-                cameraPermissionRequestLauncher.launch(Manifest.permission.CAMERA)
-            }
-            else -> {
-                showRationaleDialog()
-            }
-        }
-    }
-
-    private val cameraPermissionRequestLauncher: ActivityResultLauncher<String> =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
-            if(!isGranted){
-                appPref.perCamera++
-            }
-            permissionCallback?.invoke(isGranted)
-        }
-
-    private fun showRationaleDialog() {
-        AlertDialog.Builder(requireContext())
-            .setTitle("Camera Permission Required")
-            .setMessage("This app needs access to your camera to take photos. Please grant the permission.")
-            .setPositiveButton("OK") { _, _ ->
-                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                intent.data = Uri.parse("package:" + context?.packageName)
-                startActivity(intent)
-            }
-            .setNegativeButton("Cancel") { dialog, _ ->
-                dialog.dismiss()
-                permissionCallback?.invoke(false)
-            }
-            .create()
-            .show()
-    }
+//    @Inject
+//    lateinit var appPref1: AppPreferences
+//    var fromSetting1 = false
+//    private var permissionCallback: ((Boolean) -> Unit)? = null
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//    }
+//
+//
+//
+//    fun handleCameraPermission(callback: (Boolean) -> Unit) {
+//        permissionCallback = callback
+//        when {
+//            ContextCompat.checkSelfPermission(
+//                requireContext(),
+//                Manifest.permission.CAMERA
+//            ) == PackageManager.PERMISSION_GRANTED -> {
+//                callback.invoke(true)
+//            }
+//
+//            appPref1.perCamera == 0 || appPref1.perCamera == 1 -> {
+//                cameraPermissionRequestLauncher.launch(Manifest.permission.CAMERA)
+//            }
+//
+//            else -> {
+//                showRationaleDialog()
+//            }
+//        }
+//    }
+//
+//    private val cameraPermissionRequestLauncher: ActivityResultLauncher<String> =
+//        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+//            if (!isGranted) {
+//                appPref1.perCamera++
+//            }
+//            permissionCallback?.invoke(isGranted)
+//        }
+//
+//    private fun showRationaleDialog() {
+//        AlertDialog.Builder(requireContext())
+//            .setTitle("Camera Permission Required")
+//            .setMessage("This app needs access to your camera to take photos. Please grant the permission.")
+//            .setPositiveButton("OK") { _, _ ->
+//                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+//                intent.data = Uri.parse("package:" + context?.packageName)
+//                startActivity(intent)
+//                fromSetting1 = true
+//            }
+//            .setNegativeButton("Cancel") { dialog, _ ->
+//                dialog.dismiss()
+//                fromSetting1 = false
+//                permissionCallback?.invoke(false)
+//            }
+//            .create()
+//            .show()
+//    }
 }

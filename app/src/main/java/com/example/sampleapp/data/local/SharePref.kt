@@ -18,4 +18,9 @@ class AppPreferences(context: Context) {
         set(value) {
             edit.putInt("perStorage",value).apply()
         }
+    var perLoc : Int
+        get() { return prefs.getInt("perLoc",0)}
+        set(value) {
+            edit.putInt("perLoc",value).apply()
+        }
 }

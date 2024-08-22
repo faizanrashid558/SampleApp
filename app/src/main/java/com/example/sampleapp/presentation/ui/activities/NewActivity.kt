@@ -10,15 +10,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.sampleapp.R
+import com.example.sampleapp.data.local.AppPreferences
 import com.example.sampleapp.databinding.ActivityNewBinding
 import com.example.sampleapp.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class NewActivity : AppCompatActivity() {
     lateinit var binding : ActivityNewBinding
     private lateinit var navController: NavController
     private lateinit var vm: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =  ActivityNewBinding.inflate(layoutInflater)
