@@ -25,6 +25,7 @@ safeargsVersion="2.5.0"
 kspVersion="1.9.0-1.0.13"
 hiltVersion="2.48"
 workRuntimeKtx = "2.9.0"
+playServicesMlkitTextRecognitionCommon = "19.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -58,6 +59,7 @@ pytorch-pytorch_android_lite = { module = "org.pytorch:pytorch_android_lite", ve
 pytorch_android_torchvision = { module = "org.pytorch:pytorch_android_torchvision", version.ref = "pytorchPytorch_android_lite" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroidVersion" }
+play-services-mlkit-text-recognition-common = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition-common", version.ref = "playServicesMlkitTextRecognitionCommon" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

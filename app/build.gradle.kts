@@ -93,6 +93,15 @@ dependencies {
     //Glide
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
+    implementation("com.google.android.play:review:2.0.1")
+    implementation("com.google.android.play:review-ktx:2.0.1")
+    //image text recognize
+    implementation("com.google.mlkit:text-recognition:16.0.1")
+    //face detection
+    implementation("com.google.mlkit:face-detection:16.1.7")
+
+    //face mesh
+    implementation ("com.google.mlkit:face-mesh-detection:16.0.0-beta1")
 
 
     
